@@ -11,12 +11,14 @@
 @interface JSLiveCameraPreviewView() <AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, retain) UIImageView *cameraImageView;
 @property (nonatomic, retain) AVCaptureSession *captureSession;
+@property (nonatomic, retain) CIContext *coreImageContext;
 @end
 
 @implementation JSLiveCameraPreviewView
 
 @synthesize cameraImageView = _cameraImageView;
 @synthesize captureSession = _captureSession;
+@synthesize coreImageContext = _coreImageContext;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,6 +27,7 @@
         self.cameraImageView = [[[UIImageView alloc] initWithFrame:self.bounds] autorelease];
         _cameraImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _cameraImageView.contentMode = UIViewContentModeScaleAspectFill;
+        
         [self addSubview:_cameraImageView];
     }
     
@@ -39,6 +42,7 @@
     {
         self.captureSession = [[[AVCaptureSession alloc] init] autorelease];
         
+        // Modify if needed to adjust for the size of the view (for perfomance reasons)
         _captureSession.sessionPreset = AVCaptureSessionPreset640x480;
         
         NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -47,6 +51,7 @@
         
         for (AVCaptureDevice *d in devices)
         {
+            // Modify if needed to use other cameras
             if (d.position == AVCaptureDevicePositionBack)
             {
                 device = d;
@@ -85,11 +90,10 @@
                     previewLayer.frame = self.bounds;
                     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
                     
-                    [self.layer addSublayer:previewLayer];
-                    
-                    [_captureSession startRunning];
+                    [self.layer insertSublayer:previewLayer below:self.cameraImageView.layer];
                 }
-                else {
+                else
+                {
                     NSLog(@"Cant add camera output");
                 }
             }
@@ -98,7 +102,8 @@
                 NSLog(@"Cant add camera input");
             }
         }
-        else {
+        else
+        {
             NSLog(@"No device found");
         }
     }
@@ -126,34 +131,33 @@
     {    
         @autoreleasepool {
             
-            CVPixelBufferRef pixel_buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-            CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixel_buffer];
+            CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
+            CIImage *ciImage                = [CIImage imageWithCVPixelBuffer:pixel_buffer];
             
             [filter setValue:ciImage forKey:@"inputImage"];
             
             CIImage *outputImage = filter.outputImage;
             
-            CGImageRef ref = [self.context createCGImage:outputImage fromRect:outputImage.extent];
-            UIImage *image = [UIImage imageWithCGImage:ref scale:1.0 orientation:connection.videoOrientation];
+            CGImageRef cgImage = [self.coreImageContext createCGImage:outputImage fromRect:outputImage.extent];
+            UIImage *image = [UIImage imageWithCGImage:cgImage scale:1.0 orientation:connection.videoOrientation];
             
-            CGImageRelease(ref);
+            CGImageRelease(cgImage);
             
             dispatch_sync(dispatch_get_main_queue(), ^{
                 self.cameraImageView.image = image;
             });
-        }    
+        }
     }
 }
 
-- (CIContext *)context
+- (CIContext *)coreImageContext
 {
-    static CIContext *_context = nil;
-    
-    if (!_context) {
-        _context = [[CIContext contextWithOptions:nil] retain];
+    if (!_coreImageContext)
+    {
+        _coreImageContext = [[CIContext contextWithOptions:nil] retain];
     }
     
-    return _context;
+    return _coreImageContext;
 }
 
 #pragma mark - Memory Management
@@ -163,6 +167,7 @@
     [_cameraImageView release];
     [_captureSession stopRunning];
     [_captureSession release];
+    [_coreImageContext release];
     
     [_filterToApply release];
     

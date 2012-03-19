@@ -12,9 +12,6 @@
 
 #import "CameraImageFilterSample.h"
 
-@interface JSCameraVC () <AVCaptureVideoDataOutputSampleBufferDelegate>
-@end
-
 @implementation JSCameraVC
 
 - (void)loadView

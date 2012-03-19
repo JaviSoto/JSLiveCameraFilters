@@ -9,12 +9,12 @@
 #import "CameraImageFilterSample.h"
 
 @interface CameraImageFilterSample()
-@property (nonatomic, readonly) CIFilter *filter;
+{
+    CIFilter *_filter;
+}
 @end
 
 @implementation CameraImageFilterSample
-
-@synthesize filter = _filter;
 
 - (CIFilter *)filter
 {
@@ -29,7 +29,6 @@
     
     return _filter;
 }
-
 
 - (void)dealloc
 {

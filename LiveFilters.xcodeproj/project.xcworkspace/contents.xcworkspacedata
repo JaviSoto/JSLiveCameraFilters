@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CameraOverlay.xcodeproj">
+      location = "self:LiveFilters.xcodeproj">
    </FileRef>
 </Workspace>
