@@ -1,0 +1,262 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D95C7DA151776CC008A1C32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7D9151776CC008A1C32 /* UIKit.framework */; };
+		1D95C7DC151776CC008A1C32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7DB151776CC008A1C32 /* Foundation.framework */; };
+		1D95C7DE151776CC008A1C32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7DD151776CC008A1C32 /* CoreGraphics.framework */; };
+		1D95C7E4151776CC008A1C32 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D95C7E2151776CC008A1C32 /* InfoPlist.strings */; };
+		1D95C7E6151776CC008A1C32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D95C7E5151776CC008A1C32 /* main.m */; };
+		1D95C7EA151776CC008A1C32 /* JSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D95C7E9151776CC008A1C32 /* JSAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D95C7D5151776CC008A1C32 /* CameraOverlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraOverlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D95C7D9151776CC008A1C32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1D95C7DB151776CC008A1C32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D95C7DD151776CC008A1C32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D95C7E1151776CC008A1C32 /* CameraOverlay-Info.plist */ = {isa = PBXFileReference; path = "CameraOverlay-Info.plist"; sourceTree = "<group>"; };
+		1D95C7E3151776CC008A1C32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D95C7E5151776CC008A1C32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1D95C7E7151776CC008A1C32 /* CameraOverlay-Prefix.pch */ = {isa = PBXFileReference; path = "CameraOverlay-Prefix.pch"; sourceTree = "<group>"; };
+		1D95C7E8151776CC008A1C32 /* JSAppDelegate.h */ = {isa = PBXFileReference; path = JSAppDelegate.h; sourceTree = "<group>"; };
+		1D95C7E9151776CC008A1C32 /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D95C7D2151776CC008A1C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D95C7DA151776CC008A1C32 /* UIKit.framework in Frameworks */,
+				1D95C7DC151776CC008A1C32 /* Foundation.framework in Frameworks */,
+				1D95C7DE151776CC008A1C32 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D95C7CA151776CA008A1C32 = {
+			isa = PBXGroup;
+			children = (
+				1D95C7DF151776CC008A1C32 /* CameraOverlay */,
+				1D95C7D8151776CC008A1C32 /* Frameworks */,
+				1D95C7D6151776CC008A1C32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D95C7D6151776CC008A1C32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D95C7D5151776CC008A1C32 /* CameraOverlay.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D95C7D8151776CC008A1C32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D95C7D9151776CC008A1C32 /* UIKit.framework */,
+				1D95C7DB151776CC008A1C32 /* Foundation.framework */,
+				1D95C7DD151776CC008A1C32 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D95C7DF151776CC008A1C32 /* CameraOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				1D95C7E8151776CC008A1C32 /* JSAppDelegate.h */,
+				1D95C7E9151776CC008A1C32 /* JSAppDelegate.m */,
+				1D95C7E0151776CC008A1C32 /* Supporting Files */,
+			);
+			path = CameraOverlay;
+			sourceTree = "<group>";
+		};
+		1D95C7E0151776CC008A1C32 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D95C7E1151776CC008A1C32 /* CameraOverlay-Info.plist */,
+				1D95C7E2151776CC008A1C32 /* InfoPlist.strings */,
+				1D95C7E5151776CC008A1C32 /* main.m */,
+				1D95C7E7151776CC008A1C32 /* CameraOverlay-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D95C7D4151776CC008A1C32 /* CameraOverlay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D95C7ED151776CC008A1C32 /* Build configuration list for PBXNativeTarget "CameraOverlay" */;
+			buildPhases = (
+				1D95C7D1151776CC008A1C32 /* Sources */,
+				1D95C7D2151776CC008A1C32 /* Frameworks */,
+				1D95C7D3151776CC008A1C32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CameraOverlay;
+			productName = CameraOverlay;
+			productReference = 1D95C7D5151776CC008A1C32 /* CameraOverlay.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D95C7CC151776CA008A1C32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JS;
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = 1D95C7CF151776CA008A1C32 /* Build configuration list for PBXProject "CameraOverlay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1D95C7CA151776CA008A1C32;
+			productRefGroup = 1D95C7D6151776CC008A1C32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D95C7D4151776CC008A1C32 /* CameraOverlay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D95C7D3151776CC008A1C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D95C7E4151776CC008A1C32 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D95C7D1151776CC008A1C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D95C7E6151776CC008A1C32 /* main.m in Sources */,
+				1D95C7EA151776CC008A1C32 /* JSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1D95C7E2151776CC008A1C32 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D95C7E3151776CC008A1C32 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D95C7EB151776CC008A1C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1D95C7EC151776CC008A1C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D95C7EE151776CC008A1C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CameraOverlay/CameraOverlay-Prefix.pch";
+				INFOPLIST_FILE = "CameraOverlay/CameraOverlay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1D95C7EF151776CC008A1C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CameraOverlay/CameraOverlay-Prefix.pch";
+				INFOPLIST_FILE = "CameraOverlay/CameraOverlay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D95C7CF151776CA008A1C32 /* Build configuration list for PBXProject "CameraOverlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D95C7EB151776CC008A1C32 /* Debug */,
+				1D95C7EC151776CC008A1C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D95C7ED151776CC008A1C32 /* Build configuration list for PBXNativeTarget "CameraOverlay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D95C7EE151776CC008A1C32 /* Debug */,
+				1D95C7EF151776CC008A1C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D95C7CC151776CA008A1C32 /* Project object */;
+}
