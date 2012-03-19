@@ -8,6 +8,8 @@
 
 #import "JSAppDelegate.h"
 
+#import "JSCameraVC.h"
+
 @implementation JSAppDelegate
 
 @synthesize window = _window;
@@ -23,6 +25,11 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    JSCameraVC *cameraVC = [[JSCameraVC alloc] init];
+    self.window.rootViewController = cameraVC;
+    [cameraVC release];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
