@@ -9,12 +9,19 @@
 #import "CameraImageFilterSample.h"
 
 @interface CameraImageFilterSample()
-{
-    CIFilter *_filter;
-}
+@property (nonatomic, retain) CIFilter *filter;
 @end
 
 @implementation CameraImageFilterSample
+
+@synthesize filter = _filter;
+
+- (UIImage *)filteredImageFromOriginalCoreImageImage:(CIImage *)originalImage withOrientation:(UIImageOrientation)orientation
+{
+    [self.filter setValue:originalImage forKey:@"inputImage"];
+    
+    return UIImageFromCIImage(self.filter.outputImage, orientation);
+}
 
 - (CIFilter *)filter
 {

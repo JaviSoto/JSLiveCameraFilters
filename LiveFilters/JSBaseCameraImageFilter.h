@@ -6,8 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "JSCameraImageFilterUtils.h"
+
 @protocol JSBaseCameraImageFilter <NSObject>
-/* Implement this method and return a CIFilter instance to apply to the live stream of a JSLiveCameraPreviewView instance */
-/* See http://developer.apple.com/library/mac/#documentation/graphicsimaging/reference/CoreImageFilterReference/Reference/reference.html on how to implement the filters */
-- (CIFilter *)filter;
+
+/* Implement this method to return the image after applying the wanted filters to originalImage. Use the util method UIImageFromCIImage to return the UIImage from the outputImage of the CIImage */
+- (UIImage *)filteredImageFromOriginalCoreImageImage:(CIImage *)originalImage withOrientation:(UIImageOrientation)orientation;
 @end

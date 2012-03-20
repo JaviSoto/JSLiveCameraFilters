@@ -11,14 +11,12 @@
 @interface JSLiveCameraPreviewView() <AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, retain) UIImageView *cameraImageView;
 @property (nonatomic, retain) AVCaptureSession *captureSession;
-@property (nonatomic, retain) CIContext *coreImageContext;
 @end
 
 @implementation JSLiveCameraPreviewView
 
 @synthesize cameraImageView = _cameraImageView;
 @synthesize captureSession = _captureSession;
-@synthesize coreImageContext = _coreImageContext;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -125,39 +123,17 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    CIFilter *filter = [self.filterToApply filter];
-    
-    if (filter)
-    {    
-        @autoreleasepool {
-            
-            CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
-            CIImage *ciImage                = [CIImage imageWithCVPixelBuffer:pixel_buffer];
-            
-            [filter setValue:ciImage forKey:@"inputImage"];
-            
-            CIImage *outputImage = filter.outputImage;
-            
-            CGImageRef cgImage = [self.coreImageContext createCGImage:outputImage fromRect:outputImage.extent];
-            UIImage *image = [UIImage imageWithCGImage:cgImage scale:1.0 orientation:connection.videoOrientation];
-            
-            CGImageRelease(cgImage);
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                self.cameraImageView.image = image;
-            });
-        }
+    @autoreleasepool {
+        
+        CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
+        CIImage *ciImage                = [CIImage imageWithCVPixelBuffer:pixel_buffer];
+        
+        UIImage *filteredImage = [self.filterToApply filteredImageFromOriginalCoreImageImage:ciImage withOrientation:connection.videoOrientation];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.cameraImageView.image = filteredImage;
+        });
     }
-}
-
-- (CIContext *)coreImageContext
-{
-    if (!_coreImageContext)
-    {
-        _coreImageContext = [[CIContext contextWithOptions:nil] retain];
-    }
-    
-    return _coreImageContext;
 }
 
 #pragma mark - Memory Management
@@ -167,7 +143,6 @@
     [_cameraImageView release];
     [_captureSession stopRunning];
     [_captureSession release];
-    [_coreImageContext release];
     
     [_filterToApply release];
     
