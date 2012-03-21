@@ -39,6 +39,7 @@
     if (!_captureSession)
     {
         self.captureSession = [[[AVCaptureSession alloc] init] autorelease];
+        [_captureSession beginConfiguration];
         
         // Modify if needed to adjust for the size of the view (for perfomance reasons)
         _captureSession.sessionPreset = AVCaptureSessionPreset640x480;
@@ -50,7 +51,7 @@
         for (AVCaptureDevice *d in devices)
         {
             // Modify if needed to use other cameras
-            if (d.position == AVCaptureDevicePositionBack)
+            if (d.position == AVCaptureDevicePositionFront)
             {
                 device = d;
                 break;
@@ -104,6 +105,8 @@
         {
             NSLog(@"No device found");
         }
+        
+        [_captureSession commitConfiguration];
     }
     
     return _captureSession;
@@ -124,11 +127,17 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
     @autoreleasepool {
-        
         CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
-        CIImage *ciImage                = [CIImage imageWithCVPixelBuffer:pixel_buffer];
+        	CFDictionaryRef attachments     = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
         
-        UIImage *filteredImage = [self.filterToApply filteredImageFromOriginalCoreImageImage:ciImage withOrientation:connection.videoOrientation];
+        CIImage *ciImage                = [[CIImage alloc] initWithCVPixelBuffer:pixel_buffer options:(NSDictionary *)attachments];
+        
+        if (attachments)
+            CFRelease(attachments);
+        
+        UIImage *filteredImage          = [self.filterToApply filteredImageFromOriginalCoreImageImage:ciImage withOrientation:connection.videoOrientation];
+        
+        [ciImage release];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.cameraImageView.image = filteredImage;

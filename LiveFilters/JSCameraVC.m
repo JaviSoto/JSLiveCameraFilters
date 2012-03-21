@@ -11,6 +11,7 @@
 #import "JSLiveCameraPreviewView.h"
 
 #import "CameraImageFilterSample.h"
+#import "JSCameraImageFilterFaceDetector.h"
 
 @implementation JSCameraVC
 
@@ -21,7 +22,7 @@
     
     JSLiveCameraPreviewView *cameraPreview = [[JSLiveCameraPreviewView alloc] initWithFrame:view.bounds];
     
-    CameraImageFilterSample *imageFilterSample = [[CameraImageFilterSample alloc] init];
+    JSCameraImageFilterFaceDetector *imageFilterSample = [[JSCameraImageFilterFaceDetector alloc] init];
     
     cameraPreview.filterToApply = imageFilterSample;
     [imageFilterSample release];
