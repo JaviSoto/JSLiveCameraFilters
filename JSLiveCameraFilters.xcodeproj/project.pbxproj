@@ -71,8 +71,8 @@
 		1D1D83731517DD4C004744C2 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				1D982E8F157C015000E7966D /* JSCameraVC.m */,
 				1D982E90157C015000E7966D /* JSCameraVC.h */,
+				1D982E8F157C015000E7966D /* JSCameraVC.m */,
 				1D1D83741517DD5E004744C2 /* Sample filters */,
 			);
 			name = Demo;
@@ -123,8 +123,8 @@
 		1D95C7DF151776CC008A1C32 /* JSLiveCameraFiltersSampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				1D982E8C157C012600E7966D /* AppDelegate.m */,
 				1D982E8D157C012600E7966D /* AppDelegate.h */,
+				1D982E8C157C012600E7966D /* AppDelegate.m */,
 				1D1D83731517DD4C004744C2 /* Demo */,
 				1D982E86157C00E900E7966D /* JSLiveCameraFilters */,
 				1D95C7E0151776CC008A1C32 /* Supporting Files */,
