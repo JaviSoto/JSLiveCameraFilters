@@ -9,39 +9,45 @@
 /* Begin PBXBuildFile section */
 		1D0DE1F5151786D000006035 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0DE1F4151786D000006035 /* CoreVideo.framework */; };
 		1D1D83631517DD29004744C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D83621517DD29004744C2 /* main.m */; };
-		1D1D836E1517DD3C004744C2 /* CameraImageFilterSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D83641517DD3C004744C2 /* CameraImageFilterSample.m */; };
-		1D1D836F1517DD3C004744C2 /* JSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D83651517DD3C004744C2 /* JSAppDelegate.m */; };
-		1D1D83701517DD3C004744C2 /* JSCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D83661517DD3C004744C2 /* JSCameraVC.m */; };
-		1D1D83711517DD3C004744C2 /* JSLiveCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D83671517DD3C004744C2 /* JSLiveCameraPreviewView.m */; };
 		1D95C7DA151776CC008A1C32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7D9151776CC008A1C32 /* UIKit.framework */; };
 		1D95C7DC151776CC008A1C32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7DB151776CC008A1C32 /* Foundation.framework */; };
 		1D95C7DE151776CC008A1C32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7DD151776CC008A1C32 /* CoreGraphics.framework */; };
 		1D95C7F11517770A008A1C32 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7F01517770A008A1C32 /* AVFoundation.framework */; };
 		1D95C7F615177FED008A1C32 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7F515177FED008A1C32 /* CoreMedia.framework */; };
 		1D95C7F8151780FA008A1C32 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D95C7F7151780FA008A1C32 /* CoreImage.framework */; };
+		1D982E8B157C010000E7966D /* JSLiveCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D982E87157C00F700E7966D /* JSLiveCameraPreviewView.m */; };
+		1D982E8E157C012600E7966D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D982E8C157C012600E7966D /* AppDelegate.m */; };
+		1D982E91157C015000E7966D /* JSCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D982E8F157C015000E7966D /* JSCameraVC.m */; };
+		1D982E93157C019200E7966D /* JSCameraImageFilterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D982E92157C019200E7966D /* JSCameraImageFilterUtils.m */; };
+		1D982E98157C01A200E7966D /* JSSimpleCameraImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D982E94157C01A200E7966D /* JSSimpleCameraImageFilter.m */; };
+		1D982E99157C01A200E7966D /* JSCameraImageFilterFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D982E95157C01A200E7966D /* JSCameraImageFilterFaceDetector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D0DE1F4151786D000006035 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		1D1D83611517DC57004744C2 /* LiveFilters-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LiveFilters-Prefix.pch"; path = "LiveFilters/LiveFilters-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		1D1D83621517DD29004744C2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LiveFilters/main.m; sourceTree = SOURCE_ROOT; };
-		1D1D83641517DD3C004744C2 /* CameraImageFilterSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraImageFilterSample.m; path = LiveFilters/CameraImageFilterSample.m; sourceTree = SOURCE_ROOT; };
-		1D1D83651517DD3C004744C2 /* JSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSAppDelegate.m; path = LiveFilters/JSAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		1D1D83661517DD3C004744C2 /* JSCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSCameraVC.m; path = LiveFilters/JSCameraVC.m; sourceTree = SOURCE_ROOT; };
-		1D1D83671517DD3C004744C2 /* JSLiveCameraPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSLiveCameraPreviewView.m; path = LiveFilters/JSLiveCameraPreviewView.m; sourceTree = SOURCE_ROOT; };
-		1D1D83691517DD3C004744C2 /* CameraImageFilterSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraImageFilterSample.h; path = LiveFilters/CameraImageFilterSample.h; sourceTree = SOURCE_ROOT; };
-		1D1D836A1517DD3C004744C2 /* JSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSAppDelegate.h; path = LiveFilters/JSAppDelegate.h; sourceTree = SOURCE_ROOT; };
-		1D1D836B1517DD3C004744C2 /* JSBaseCameraImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSBaseCameraImageFilter.h; path = LiveFilters/JSBaseCameraImageFilter.h; sourceTree = SOURCE_ROOT; };
-		1D1D836C1517DD3C004744C2 /* JSCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSCameraVC.h; path = LiveFilters/JSCameraVC.h; sourceTree = SOURCE_ROOT; };
-		1D1D836D1517DD3C004744C2 /* JSLiveCameraPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSLiveCameraPreviewView.h; path = LiveFilters/JSLiveCameraPreviewView.h; sourceTree = SOURCE_ROOT; };
+		1D1D83611517DC57004744C2 /* JSLiveCameraFilters-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "JSLiveCameraFilters-Prefix.pch"; path = "JSLiveCameraFiltersSampleProject/JSLiveCameraFilters-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		1D1D83621517DD29004744C2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = JSLiveCameraFiltersSampleProject/main.m; sourceTree = SOURCE_ROOT; };
 		1D95C7D5151776CC008A1C32 /* LiveFilters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveFilters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D95C7D9151776CC008A1C32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1D95C7DB151776CC008A1C32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D95C7DD151776CC008A1C32 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1D95C7E1151776CC008A1C32 /* LiveFilters-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LiveFilters-Info.plist"; path = "../LiveFilters/LiveFilters-Info.plist"; sourceTree = "<group>"; };
+		1D95C7E1151776CC008A1C32 /* JSLiveCameraFilters-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "JSLiveCameraFilters-Info.plist"; path = "JSLiveCameraFiltersSampleProject/JSLiveCameraFilters-Info.plist"; sourceTree = "<group>"; };
 		1D95C7F01517770A008A1C32 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1D95C7F515177FED008A1C32 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		1D95C7F7151780FA008A1C32 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1D982E87157C00F700E7966D /* JSLiveCameraPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JSLiveCameraPreviewView.m; path = JSLiveCameraFilters/JSLiveCameraPreviewView.m; sourceTree = SOURCE_ROOT; };
+		1D982E88157C00F700E7966D /* JSCameraImageFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSCameraImageFilter.h; path = JSLiveCameraFilters/JSCameraImageFilter.h; sourceTree = SOURCE_ROOT; };
+		1D982E89157C00F700E7966D /* JSCameraImageFilterUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSCameraImageFilterUtils.h; path = JSLiveCameraFilters/JSCameraImageFilterUtils.h; sourceTree = SOURCE_ROOT; };
+		1D982E8A157C00F700E7966D /* JSLiveCameraPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSLiveCameraPreviewView.h; path = JSLiveCameraFilters/JSLiveCameraPreviewView.h; sourceTree = SOURCE_ROOT; };
+		1D982E8C157C012600E7966D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = JSLiveCameraFiltersSampleProject/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		1D982E8D157C012600E7966D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = JSLiveCameraFiltersSampleProject/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		1D982E8F157C015000E7966D /* JSCameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSCameraVC.m; path = JSLiveCameraFiltersSampleProject/JSCameraVC.m; sourceTree = SOURCE_ROOT; };
+		1D982E90157C015000E7966D /* JSCameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSCameraVC.h; path = JSLiveCameraFiltersSampleProject/JSCameraVC.h; sourceTree = SOURCE_ROOT; };
+		1D982E92157C019200E7966D /* JSCameraImageFilterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSCameraImageFilterUtils.m; path = JSLiveCameraFilters/JSCameraImageFilterUtils.m; sourceTree = SOURCE_ROOT; };
+		1D982E94157C01A200E7966D /* JSSimpleCameraImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSSimpleCameraImageFilter.m; path = JSLiveCameraFiltersSampleProject/JSSimpleCameraImageFilter.m; sourceTree = SOURCE_ROOT; };
+		1D982E95157C01A200E7966D /* JSCameraImageFilterFaceDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSCameraImageFilterFaceDetector.m; path = JSLiveCameraFiltersSampleProject/JSCameraImageFilterFaceDetector.m; sourceTree = SOURCE_ROOT; };
+		1D982E96157C01A200E7966D /* JSSimpleCameraImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSSimpleCameraImageFilter.h; path = JSLiveCameraFiltersSampleProject/JSSimpleCameraImageFilter.h; sourceTree = SOURCE_ROOT; };
+		1D982E97157C01A200E7966D /* JSCameraImageFilterFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSCameraImageFilterFaceDetector.h; path = JSLiveCameraFiltersSampleProject/JSCameraImageFilterFaceDetector.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,29 +68,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D1D83731517DD4C004744C2 /* Demo VC */ = {
+		1D1D83731517DD4C004744C2 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				1D1D836C1517DD3C004744C2 /* JSCameraVC.h */,
-				1D1D83661517DD3C004744C2 /* JSCameraVC.m */,
+				1D982E90157C015000E7966D /* JSCameraVC.h */,
+				1D982E8F157C015000E7966D /* JSCameraVC.m */,
+				1D1D83741517DD5E004744C2 /* Sample filters */,
 			);
-			name = "Demo VC";
+			name = Demo;
 			sourceTree = "<group>";
 		};
-		1D1D83741517DD5E004744C2 /* Filters */ = {
+		1D1D83741517DD5E004744C2 /* Sample filters */ = {
 			isa = PBXGroup;
 			children = (
-				1D1D836B1517DD3C004744C2 /* JSBaseCameraImageFilter.h */,
-				1D1D83691517DD3C004744C2 /* CameraImageFilterSample.h */,
-				1D1D83641517DD3C004744C2 /* CameraImageFilterSample.m */,
+				1D982E96157C01A200E7966D /* JSSimpleCameraImageFilter.h */,
+				1D982E94157C01A200E7966D /* JSSimpleCameraImageFilter.m */,
+				1D982E97157C01A200E7966D /* JSCameraImageFilterFaceDetector.h */,
+				1D982E95157C01A200E7966D /* JSCameraImageFilterFaceDetector.m */,
 			);
-			name = Filters;
+			name = "Sample filters";
 			sourceTree = "<group>";
 		};
 		1D95C7CA151776CA008A1C32 = {
 			isa = PBXGroup;
 			children = (
-				1D95C7DF151776CC008A1C32 /* CameraOverlay */,
+				1D95C7DF151776CC008A1C32 /* JSLiveCameraFiltersSampleProject */,
 				1D95C7D8151776CC008A1C32 /* Frameworks */,
 				1D95C7D6151776CC008A1C32 /* Products */,
 			);
@@ -112,36 +120,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1D95C7DF151776CC008A1C32 /* CameraOverlay */ = {
+		1D95C7DF151776CC008A1C32 /* JSLiveCameraFiltersSampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				1D1D836A1517DD3C004744C2 /* JSAppDelegate.h */,
-				1D1D83651517DD3C004744C2 /* JSAppDelegate.m */,
-				1D1D83731517DD4C004744C2 /* Demo VC */,
-				1D1D83741517DD5E004744C2 /* Filters */,
-				1D1D83671517DD3C004744C2 /* JSLiveCameraPreviewView.m */,
-				1D1D836D1517DD3C004744C2 /* JSLiveCameraPreviewView.h */,
+				1D982E8D157C012600E7966D /* AppDelegate.h */,
+				1D982E8C157C012600E7966D /* AppDelegate.m */,
+				1D1D83731517DD4C004744C2 /* Demo */,
+				1D982E86157C00E900E7966D /* JSLiveCameraFilters */,
 				1D95C7E0151776CC008A1C32 /* Supporting Files */,
 			);
+			name = JSLiveCameraFiltersSampleProject;
 			path = CameraOverlay;
 			sourceTree = "<group>";
 		};
 		1D95C7E0151776CC008A1C32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1D95C7E1151776CC008A1C32 /* LiveFilters-Info.plist */,
 				1D1D83621517DD29004744C2 /* main.m */,
-				1D1D83611517DC57004744C2 /* LiveFilters-Prefix.pch */,
+				1D95C7E1151776CC008A1C32 /* JSLiveCameraFilters-Info.plist */,
+				1D1D83611517DC57004744C2 /* JSLiveCameraFilters-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D982E86157C00E900E7966D /* JSLiveCameraFilters */ = {
+			isa = PBXGroup;
+			children = (
+				1D982E88157C00F700E7966D /* JSCameraImageFilter.h */,
+				1D982E89157C00F700E7966D /* JSCameraImageFilterUtils.h */,
+				1D982E92157C019200E7966D /* JSCameraImageFilterUtils.m */,
+				1D982E8A157C00F700E7966D /* JSLiveCameraPreviewView.h */,
+				1D982E87157C00F700E7966D /* JSLiveCameraPreviewView.m */,
+			);
+			name = JSLiveCameraFilters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D95C7D4151776CC008A1C32 /* LiveFilters */ = {
+		1D95C7D4151776CC008A1C32 /* JSLiveCameraFiltersSampleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D95C7ED151776CC008A1C32 /* Build configuration list for PBXNativeTarget "LiveFilters" */;
+			buildConfigurationList = 1D95C7ED151776CC008A1C32 /* Build configuration list for PBXNativeTarget "JSLiveCameraFiltersSampleApp" */;
 			buildPhases = (
 				1D95C7D1151776CC008A1C32 /* Sources */,
 				1D95C7D2151776CC008A1C32 /* Frameworks */,
@@ -151,7 +170,7 @@
 			);
 			dependencies = (
 			);
-			name = LiveFilters;
+			name = JSLiveCameraFiltersSampleApp;
 			productName = CameraOverlay;
 			productReference = 1D95C7D5151776CC008A1C32 /* LiveFilters.app */;
 			productType = "com.apple.product-type.application";
@@ -165,7 +184,7 @@
 				CLASSPREFIX = JS;
 				LastUpgradeCheck = 0440;
 			};
-			buildConfigurationList = 1D95C7CF151776CA008A1C32 /* Build configuration list for PBXProject "LiveFilters" */;
+			buildConfigurationList = 1D95C7CF151776CA008A1C32 /* Build configuration list for PBXProject "JSLiveCameraFilters" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -177,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D95C7D4151776CC008A1C32 /* LiveFilters */,
+				1D95C7D4151776CC008A1C32 /* JSLiveCameraFiltersSampleApp */,
 			);
 		};
 /* End PBXProject section */
@@ -198,10 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1D83631517DD29004744C2 /* main.m in Sources */,
-				1D1D836E1517DD3C004744C2 /* CameraImageFilterSample.m in Sources */,
-				1D1D836F1517DD3C004744C2 /* JSAppDelegate.m in Sources */,
-				1D1D83701517DD3C004744C2 /* JSCameraVC.m in Sources */,
-				1D1D83711517DD3C004744C2 /* JSLiveCameraPreviewView.m in Sources */,
+				1D982E8B157C010000E7966D /* JSLiveCameraPreviewView.m in Sources */,
+				1D982E8E157C012600E7966D /* AppDelegate.m in Sources */,
+				1D982E91157C015000E7966D /* JSCameraVC.m in Sources */,
+				1D982E93157C019200E7966D /* JSCameraImageFilterUtils.m in Sources */,
+				1D982E98157C01A200E7966D /* JSSimpleCameraImageFilter.m in Sources */,
+				1D982E99157C01A200E7966D /* JSCameraImageFilterFaceDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +276,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LiveFilters/LiveFilters-Prefix.pch";
-				INFOPLIST_FILE = "LiveFilters/LiveFilters-Info.plist";
+				GCC_PREFIX_HEADER = "JSLiveCameraFiltersSampleProject/JSLiveCameraFilters-Prefix.pch";
+				INFOPLIST_FILE = "JSLiveCameraFiltersSampleProject/JSLiveCameraFilters-Info.plist";
 				PRODUCT_NAME = LiveFilters;
 				WRAPPER_EXTENSION = app;
 			};
@@ -266,8 +287,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LiveFilters/LiveFilters-Prefix.pch";
-				INFOPLIST_FILE = "LiveFilters/LiveFilters-Info.plist";
+				GCC_PREFIX_HEADER = "JSLiveCameraFiltersSampleProject/JSLiveCameraFilters-Prefix.pch";
+				INFOPLIST_FILE = "JSLiveCameraFiltersSampleProject/JSLiveCameraFilters-Info.plist";
 				PRODUCT_NAME = LiveFilters;
 				WRAPPER_EXTENSION = app;
 			};
@@ -276,7 +297,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D95C7CF151776CA008A1C32 /* Build configuration list for PBXProject "LiveFilters" */ = {
+		1D95C7CF151776CA008A1C32 /* Build configuration list for PBXProject "JSLiveCameraFilters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D95C7EB151776CC008A1C32 /* Debug */,
@@ -285,7 +306,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D95C7ED151776CC008A1C32 /* Build configuration list for PBXNativeTarget "LiveFilters" */ = {
+		1D95C7ED151776CC008A1C32 /* Build configuration list for PBXNativeTarget "JSLiveCameraFiltersSampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D95C7EE151776CC008A1C32 /* Debug */,

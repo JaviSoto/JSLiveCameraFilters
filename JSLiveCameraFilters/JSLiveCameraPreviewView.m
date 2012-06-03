@@ -1,24 +1,30 @@
-//
-//  JSLiveCameraPreviewView.m
-//  CameraOverlay
-//
-//  Created by Javier Soto on 3/19/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+/* 
+ Copyright 2012 Javier Soto (ios@javisoto.es)
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License. 
+ */
 
 #import "JSLiveCameraPreviewView.h"
 
 @interface JSLiveCameraPreviewView() <AVCaptureVideoDataOutputSampleBufferDelegate>
 @property (nonatomic, retain) UIImageView *cameraImageView;
 @property (nonatomic, retain) AVCaptureSession *captureSession;
-@property (nonatomic, retain) CIContext *coreImageContext;
 @end
 
 @implementation JSLiveCameraPreviewView
 
 @synthesize cameraImageView = _cameraImageView;
 @synthesize captureSession = _captureSession;
-@synthesize coreImageContext = _coreImageContext;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -41,6 +47,7 @@
     if (!_captureSession)
     {
         self.captureSession = [[[AVCaptureSession alloc] init] autorelease];
+        [_captureSession beginConfiguration];
         
         // Modify if needed to adjust for the size of the view (for perfomance reasons)
         _captureSession.sessionPreset = AVCaptureSessionPreset640x480;
@@ -52,7 +59,7 @@
         for (AVCaptureDevice *d in devices)
         {
             // Modify if needed to use other cameras
-            if (d.position == AVCaptureDevicePositionBack)
+            if (d.position != AVCaptureDevicePositionFront)
             {
                 device = d;
                 break;
@@ -77,7 +84,7 @@
                 output.videoSettings = options;
                 output.alwaysDiscardsLateVideoFrames = YES;
                 
-                dispatch_queue_t cameraStreamHandlingQueue = dispatch_queue_create("JSCameraStreamHandlingQueue", DISPATCH_QUEUE_SERIAL);
+                dispatch_queue_t cameraStreamHandlingQueue = dispatch_queue_create("es.javisoto.livecamerapreviewview.streamqueue", DISPATCH_QUEUE_SERIAL);
                 
                 [output setSampleBufferDelegate:self queue:cameraStreamHandlingQueue];
                 dispatch_release(cameraStreamHandlingQueue);
@@ -94,18 +101,20 @@
                 }
                 else
                 {
-                    NSLog(@"Cant add camera output");
+                    NSAssert(NO, @"Cant add camera output");
                 }
             }
             else
             {
-                NSLog(@"Cant add camera input");
+                NSAssert(NO, @"Cant add camera input");
             }
         }
         else
         {
-            NSLog(@"No device found");
+            NSAssert(NO, @"No device found");
         }
+        
+        [_captureSession commitConfiguration];
     }
     
     return _captureSession;
@@ -125,39 +134,23 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-    CIFilter *filter = [self.filterToApply filter];
-    
-    if (filter)
-    {    
-        @autoreleasepool {
-            
-            CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
-            CIImage *ciImage                = [CIImage imageWithCVPixelBuffer:pixel_buffer];
-            
-            [filter setValue:ciImage forKey:@"inputImage"];
-            
-            CIImage *outputImage = filter.outputImage;
-            
-            CGImageRef cgImage = [self.coreImageContext createCGImage:outputImage fromRect:outputImage.extent];
-            UIImage *image = [UIImage imageWithCGImage:cgImage scale:1.0 orientation:connection.videoOrientation];
-            
-            CGImageRelease(cgImage);
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                self.cameraImageView.image = image;
-            });
-        }
+    @autoreleasepool {
+        CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
+        	CFDictionaryRef attachments     = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+        
+        CIImage *ciImage                = [[CIImage alloc] initWithCVPixelBuffer:pixel_buffer options:(NSDictionary *)attachments];
+        
+        if (attachments)
+            CFRelease(attachments);
+        
+        UIImage *filteredImage          = [self.filterToApply filteredImageFromOriginalCoreImageImage:ciImage withOrientation:connection.videoOrientation];
+        
+        [ciImage release];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.cameraImageView.image = filteredImage;
+        });
     }
-}
-
-- (CIContext *)coreImageContext
-{
-    if (!_coreImageContext)
-    {
-        _coreImageContext = [[CIContext contextWithOptions:nil] retain];
-    }
-    
-    return _coreImageContext;
 }
 
 #pragma mark - Memory Management
@@ -167,7 +160,6 @@
     [_cameraImageView release];
     [_captureSession stopRunning];
     [_captureSession release];
-    [_coreImageContext release];
     
     [_filterToApply release];
     

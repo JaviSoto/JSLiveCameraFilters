@@ -1,20 +1,27 @@
 //
-//  CameraImageFilterSample.m
+//  JSSimpleCameraImageFilter.m
 //  CameraOverlay
 //
 //  Created by Javier Soto on 3/19/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Javier Soto. All rights reserved.
 //
 
-#import "CameraImageFilterSample.h"
+#import "JSSimpleCameraImageFilter.h"
 
-@interface CameraImageFilterSample()
-{
-    CIFilter *_filter;
-}
+@interface JSSimpleCameraImageFilter()
+@property (nonatomic, retain) CIFilter *filter;
 @end
 
-@implementation CameraImageFilterSample
+@implementation JSSimpleCameraImageFilter
+
+@synthesize filter = _filter;
+
+- (UIImage *)filteredImageFromOriginalCoreImageImage:(CIImage *)originalImage withOrientation:(UIImageOrientation)orientation
+{
+    [self.filter setValue:originalImage forKey:@"inputImage"];
+    
+    return UIImageFromCIImage(self.filter.outputImage, orientation);
+}
 
 - (CIFilter *)filter
 {
