@@ -1,5 +1,5 @@
 //
-//  CameraImageFilterSample.h
+//  JSSimpleCameraImageFilter.h
 //  CameraOverlay
 //
 //  Created by Javier Soto on 3/19/12.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "JSBaseCameraImageFilter.h"
+#import "JSCameraImageFilter.h"
 
-@interface CameraImageFilterSample : NSObject <JSCameraImageFilter>
+@interface JSSimpleCameraImageFilter : NSObject <JSCameraImageFilter>
 
 @end
