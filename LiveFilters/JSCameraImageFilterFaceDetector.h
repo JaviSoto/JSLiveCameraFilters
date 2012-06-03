@@ -8,6 +8,7 @@
 
 #import "JSBaseCameraImageFilter.h"
 
+/* This is Work in Progress. It still doesn't work very well. Any contribution is appreciated ;) */
 @interface JSCameraImageFilterFaceDetector : NSObject <JSCameraImageFilter>
 
 @end
