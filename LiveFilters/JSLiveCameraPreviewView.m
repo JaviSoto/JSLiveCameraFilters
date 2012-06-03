@@ -101,17 +101,17 @@
                 }
                 else
                 {
-                    NSLog(@"Cant add camera output");
+                    NSAssert(NO, @"Cant add camera output");
                 }
             }
             else
             {
-                NSLog(@"Cant add camera input");
+                NSAssert(NO, @"Cant add camera input");
             }
         }
         else
         {
-            NSLog(@"No device found");
+            NSAssert(NO, @"No device found");
         }
         
         [_captureSession commitConfiguration];
