@@ -3,14 +3,13 @@
 //  LiveFilters
 //
 //  Created by Javier Soto on 3/20/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Javier Soto. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 #import "JSBaseCameraImageFilter.h"
 
-@interface JSCameraImageFilterFaceDetector : NSObject <JSBaseCameraImageFilter>
 @interface JSCameraImageFilterFaceDetector : NSObject <JSCameraImageFilter>
 
 @end
