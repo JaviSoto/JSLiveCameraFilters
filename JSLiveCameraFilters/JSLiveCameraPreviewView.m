@@ -26,6 +26,8 @@
 @synthesize cameraImageView = _cameraImageView;
 @synthesize captureSession = _captureSession;
 
+@synthesize filterToApply = _filterToApply;
+
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame]))
