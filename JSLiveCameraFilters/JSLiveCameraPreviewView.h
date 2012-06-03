@@ -14,7 +14,7 @@
  limitations under the License. 
  */
 
-#import "JSBaseCameraImageFilter.h"
+#import "JSCameraImageFilter.h"
 
 /* Yoy need to link against all these frameworks */
 #import <AVFoundation/AVFoundation.h>

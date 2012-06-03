@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Javier Soto. All rights reserved.
 //
 
-#import "JSBaseCameraImageFilter.h"
+#import "JSCameraImageFilter.h"
 
 /* This is Work in Progress. It still doesn't work very well. Any contribution is appreciated ;) */
 @interface JSCameraImageFilterFaceDetector : NSObject <JSCameraImageFilter>
