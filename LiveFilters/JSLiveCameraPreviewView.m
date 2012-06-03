@@ -59,7 +59,7 @@
         for (AVCaptureDevice *d in devices)
         {
             // Modify if needed to use other cameras
-            if (d.position == AVCaptureDevicePositionFront)
+            if (d.position != AVCaptureDevicePositionFront)
             {
                 device = d;
                 break;
