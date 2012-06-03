@@ -136,7 +136,7 @@
 {
     @autoreleasepool {
         CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
-        	CFDictionaryRef attachments     = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+        CFDictionaryRef attachments     = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
         
         CIImage *ciImage                = [[CIImage alloc] initWithCVPixelBuffer:pixel_buffer options:(NSDictionary *)attachments];
         
