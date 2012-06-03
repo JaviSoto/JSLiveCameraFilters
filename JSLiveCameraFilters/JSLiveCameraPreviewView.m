@@ -147,8 +147,9 @@
         
         [ciImage release];
         
+        __block typeof(self) weakSelf = self;
         dispatch_sync(dispatch_get_main_queue(), ^{
-            self.cameraImageView.image = filteredImage;
+            weakSelf.cameraImageView.image = filteredImage;
         });
     }
 }
