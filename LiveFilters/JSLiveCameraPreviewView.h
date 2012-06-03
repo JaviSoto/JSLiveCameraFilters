@@ -16,6 +16,12 @@
 
 #import "JSBaseCameraImageFilter.h"
 
+/* Yoy need to link against all these frameworks */
+#import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
+#import <CoreImage/CoreImage.h>
+#import <CoreVideo/CoreVideo.h>
+
 @interface JSLiveCameraPreviewView : UIView
 
 /* Pass an instance of a class that conforms to the JSBaseCameraImageFilter protocol with a filter to apply in real time to the camera live stream */
