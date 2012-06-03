@@ -84,7 +84,7 @@
                 output.videoSettings = options;
                 output.alwaysDiscardsLateVideoFrames = YES;
                 
-                dispatch_queue_t cameraStreamHandlingQueue = dispatch_queue_create("JSCameraStreamHandlingQueue", DISPATCH_QUEUE_SERIAL);
+                dispatch_queue_t cameraStreamHandlingQueue = dispatch_queue_create("es.javisoto.livecamerapreviewview.streamqueue", DISPATCH_QUEUE_SERIAL);
                 
                 [output setSampleBufferDelegate:self queue:cameraStreamHandlingQueue];
                 dispatch_release(cameraStreamHandlingQueue);
