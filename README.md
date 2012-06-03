@@ -1,4 +1,4 @@
-#JSLiveCameraFilters v0.5
+#JSLiveCameraFilters v0.5.1
 
 ##Description:
 ```JSLiveCameraFilters``` gives you an easy to use UIView subclass ([```JSLiveCameraPreviewView```](https://github.com/JaviSoto/JSLiveCameraFilters/blob/master/JSLiveCameraFilters/JSLiveCameraPreviewView.h)) to implement a camera feed with real time filters using ```Core Image``` (iOS5+).
