@@ -26,6 +26,8 @@
 @synthesize cameraImageView = _cameraImageView;
 @synthesize captureSession = _captureSession;
 
+@synthesize filterToApply = _filterToApply;
+
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame]))
@@ -136,7 +138,7 @@
 {
     @autoreleasepool {
         CVPixelBufferRef pixel_buffer   = CMSampleBufferGetImageBuffer(sampleBuffer);
-        	CFDictionaryRef attachments     = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
+        CFDictionaryRef attachments     = CMCopyDictionaryOfAttachments(kCFAllocatorDefault, sampleBuffer, kCMAttachmentMode_ShouldPropagate);
         
         CIImage *ciImage                = [[CIImage alloc] initWithCVPixelBuffer:pixel_buffer options:(NSDictionary *)attachments];
         
@@ -147,8 +149,9 @@
         
         [ciImage release];
         
+        __block typeof(self) weakSelf = self;
         dispatch_sync(dispatch_get_main_queue(), ^{
-            self.cameraImageView.image = filteredImage;
+            weakSelf.cameraImageView.image = filteredImage;
         });
     }
 }
