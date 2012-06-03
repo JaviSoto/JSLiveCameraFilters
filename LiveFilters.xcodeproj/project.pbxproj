@@ -68,27 +68,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D1D83731517DD4C004744C2 /* Demo VC */ = {
+		1D1D83731517DD4C004744C2 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				1D1D836C1517DD3C004744C2 /* JSCameraVC.h */,
 				1D1D83661517DD3C004744C2 /* JSCameraVC.m */,
+				1D1D83741517DD5E004744C2 /* Sample filters */,
 			);
-			name = "Demo VC";
+			name = Demo;
 			sourceTree = "<group>";
 		};
-		1D1D83741517DD5E004744C2 /* Filters */ = {
+		1D1D83741517DD5E004744C2 /* Sample filters */ = {
 			isa = PBXGroup;
 			children = (
-				1D1D836B1517DD3C004744C2 /* JSBaseCameraImageFilter.h */,
-				1D30F16C1519113400CA4EEC /* JSCameraImageFilterUtils.h */,
-				1D30F16E1519114600CA4EEC /* JSCameraImageFilterUtils.m */,
 				1D1D83691517DD3C004744C2 /* CameraImageFilterSample.h */,
 				1D1D83641517DD3C004744C2 /* CameraImageFilterSample.m */,
 				1D30F1701519140700CA4EEC /* JSCameraImageFilterFaceDetector.h */,
 				1D30F1711519140700CA4EEC /* JSCameraImageFilterFaceDetector.m */,
 			);
-			name = Filters;
+			name = "Sample filters";
 			sourceTree = "<group>";
 		};
 		1D95C7CA151776CA008A1C32 = {
@@ -127,8 +125,10 @@
 			children = (
 				1D1D836A1517DD3C004744C2 /* JSAppDelegate.h */,
 				1D1D83651517DD3C004744C2 /* JSAppDelegate.m */,
-				1D1D83731517DD4C004744C2 /* Demo VC */,
-				1D1D83741517DD5E004744C2 /* Filters */,
+				1D1D83731517DD4C004744C2 /* Demo */,
+				1D1D836B1517DD3C004744C2 /* JSBaseCameraImageFilter.h */,
+				1D30F16C1519113400CA4EEC /* JSCameraImageFilterUtils.h */,
+				1D30F16E1519114600CA4EEC /* JSCameraImageFilterUtils.m */,
 				1D1D836D1517DD3C004744C2 /* JSLiveCameraPreviewView.h */,
 				1D1D83671517DD3C004744C2 /* JSLiveCameraPreviewView.m */,
 				1D95C7E0151776CC008A1C32 /* Supporting Files */,

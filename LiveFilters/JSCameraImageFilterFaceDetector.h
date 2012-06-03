@@ -11,5 +11,6 @@
 #import "JSBaseCameraImageFilter.h"
 
 @interface JSCameraImageFilterFaceDetector : NSObject <JSBaseCameraImageFilter>
+@interface JSCameraImageFilterFaceDetector : NSObject <JSCameraImageFilter>
 
 @end

@@ -8,7 +8,7 @@
 
 #import "JSCameraImageFilterUtils.h"
 
-@protocol JSBaseCameraImageFilter <NSObject>
+@protocol JSCameraImageFilter <NSObject>
 
 /* Implement this method to return the image after applying the wanted filters to originalImage. Use the util method UIImageFromCIImage to return the UIImage from the outputImage of the CIImage */
 - (UIImage *)filteredImageFromOriginalCoreImageImage:(CIImage *)originalImage withOrientation:(UIImageOrientation)orientation;

@@ -14,6 +14,8 @@
 
 /* Pass an instance of a class that conforms to the JSBaseCameraImageFilter protocol with a filter to apply in real time to the camera live stream */
 @property (atomic, retain) id<JSBaseCameraImageFilter> filterToApply;
+/* Pass an instance of a class that conforms to the JSCameraImageFilter protocol with a filter to apply in real time to the camera live stream */
+@property (atomic, retain) id<JSCameraImageFilter> filterToApply;
 
 - (void)startCameraCapture;
 - (void)stopCameraCapture;

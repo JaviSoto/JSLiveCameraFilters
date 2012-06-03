@@ -10,6 +10,6 @@
 
 #import "JSBaseCameraImageFilter.h"
 
-@interface CameraImageFilterSample : NSObject <JSBaseCameraImageFilter>
+@interface CameraImageFilterSample : NSObject <JSCameraImageFilter>
 
 @end
