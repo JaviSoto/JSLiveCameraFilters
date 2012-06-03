@@ -22,7 +22,7 @@
     
     JSLiveCameraPreviewView *cameraPreview = [[JSLiveCameraPreviewView alloc] initWithFrame:view.bounds];
     
-    JSCameraImageFilterFaceDetector *imageFilterSample = [[JSCameraImageFilterFaceDetector alloc] init];
+    CameraImageFilterSample *imageFilterSample = [[CameraImageFilterSample alloc] init];
     
     cameraPreview.filterToApply = imageFilterSample;
     [imageFilterSample release];
