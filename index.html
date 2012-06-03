@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>JSLiveCameraFilters by JaviSoto</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>JSLiveCameraFilters</h1>
+        <p>Easy to use UIView subclass to implement a camera feed with real time filters using Core Image (iOS5+)</p>
+        <p class="view"><a href="https://github.com/JaviSoto/JSLiveCameraFilters">View the Project on GitHub <small>JaviSoto/JSLiveCameraFilters</small></a></p>
+        <ul>
+          <li><a href="https://github.com/JaviSoto/JSLiveCameraFilters/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/JaviSoto/JSLiveCameraFilters/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/JaviSoto/JSLiveCameraFilters">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>JSLiveCameraFilters v0.5</h1>
+
+<h2>Description:</h2>
+
+<p><code>JSLiveCameraFilters</code> gives you an easy to use UIView subclass (<a href="https://github.com/JaviSoto/JSLiveCameraFilters/blob/master/JSLiveCameraFilters/JSLiveCameraPreviewView.h"><code>JSLiveCameraPreviewView</code></a>) to implement a camera feed with real time filters using <code>Core Image</code> (iOS5+).</p>
+
+<h2>How to use:</h2>
+
+<ul>
+<li>Add a <code>JSLiveCameraPreviewView</code> view as a subview to one of your view controllers (like <a href="https://github.com/JaviSoto/JSLiveCameraFilters/blob/master/JSLiveCameraFiltersSampleProject/JSCameraVC.m"><code>JSCameraVC</code></a> in the sample app)</li>
+<li>Pass a filter to it via the <code>filterToApply</code> property. You have to use a class that conforms to the <code>JSCameraImageFilter</code>, i.e. that implements this method:</li>
+</ul><div class="highlight">
+<pre><span class="k">-</span> <span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nf">filteredImageFromOriginalCoreImageImage:</span><span class="p">(</span><span class="n">CIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">originalImage</span> <span class="nf">withOrientation:</span><span class="p">(</span><span class="n">UIImageOrientation</span><span class="p">)</span><span class="nv">orientation</span><span class="p">;</span>
+</pre>
+</div>
+
+
+<p>You can alter the <code>originalImage</code> object passed (e.g. using <code>CIFilter</code>, check the sample filters) and returned the result as an <code>UIImage</code>. You can use this function to get the <code>UIImage</code> from the <code>CIImage</code>:</p>
+
+<div class="highlight">
+<pre><span class="n">UIImage</span> <span class="o">*</span><span class="n">UIImageFromCIImage</span><span class="p">(</span><span class="n">CIImage</span> <span class="o">*</span><span class="n">ciimage</span><span class="p">,</span> <span class="n">UIImageOrientation</span> <span class="n">orientation</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<h2>Status:</h2>
+
+<ul>
+<li>This is kind of an unfinished prototype. But I hope it can be useful to get real time filters set up.</li>
+<li>The <code>JSCameraImageFilterFaceDetector</code> sample filter that I include in the sample project doesn't work, because I haven't had time to finish it :) If you want to contribute that would be great :)</li>
+</ul><h2>License:</h2>
+
+<p>Copyright 2012 <a href="http://twitter.com/javisoto">Javier Soto</a> (<a href="mailto:ios@javisoto.es">ios@javisoto.es</a>)</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+
+<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+ limitations under the License. </p>
+
+<p>Attribution is not required, but appreciated.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/JaviSoto">JaviSoto</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker(" UA-30545231-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
